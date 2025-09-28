@@ -14,6 +14,7 @@
     function reverseString(str) {
       return str.split('').reverse().join('');
     }
+    console.log(reverseString('hello')); // 'olleh'
 
     // Решение 2: Через цикл (показывает понимание алгоритмов)
     function reverseStringLoop(str) {
@@ -23,13 +24,14 @@
       }
       return reversed;
     }
+    console.log(reverseStringLoop('world'))
 
     // Решение 3: Использование метода reduce (продвинутый вариант)
     function reverseStringReduce(str) {
       return str.split('').reduce((rev, char) => char + rev, '');
     }
 
-    console.log(reverseString('hello')); // 'olleh'
+    console.log(reverseStringReduce('sweet')); // 'olleh'
   </script>
 </body>
 
