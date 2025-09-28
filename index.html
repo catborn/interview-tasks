@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>interview</title>
+</head>
+
+<body>
+  <h1>Задачи к собеседованиям</h1>
+  <script>
+    // Решение 1: Использование методов split, reverse, join (самое простое)
+    function reverseString(str) {
+      return str.split('').reverse().join('');
+    }
+
+    // Решение 2: Через цикл (показывает понимание алгоритмов)
+    function reverseStringLoop(str) {
+      let reversed = '';
+      for (let char of str) {
+        reversed = char + reversed; // Добавляем символ в начало новой строки
+      }
+      return reversed;
+    }
+
+    // Решение 3: Использование метода reduce (продвинутый вариант)
+    function reverseStringReduce(str) {
+      return str.split('').reduce((rev, char) => char + rev, '');
+    }
+
+    console.log(reverseString('hello')); // 'olleh'
+  </script>
+</body>
+
+</html>
