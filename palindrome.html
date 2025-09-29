@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palindrome</title>
+</head>
+
+<body>
+  <h1>Задача к собеседованиям</h1>
+  <h2>Проверка на палиндром</h2>
+  <script>
+    function isPalindrome(str) {
+      // Приводим к нижнему регистру, убираем все не буквы и не цифры
+      const cleanedStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+      // Сравниваем очищенную строку с её перевернутой версией
+      return cleanedStr === cleanedStr.split('').reverse().join('');
+    }
+
+    console.log(isPalindrome('A man, a plan, a canal: Panama')); // true
+    console.log(isPalindrome('racecar')); // true
+    console.log(isPalindrome('hello')); // false
+  </script>
+</body>
+
+</html>
