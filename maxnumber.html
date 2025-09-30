@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Max</title>
+</head>
+
+<body>
+  <h1>Задача к собеседованиям</h1>
+  <h2>Найти наибольшее число в массиве</h2>
+  <script>// Решение 1: Через цикл (базовое)
+    function findMax(arr) {
+      let max = arr[0]; // Предполагаем, что первый элемент - максимальный
+      for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+          max = arr[i];
+        }
+      }
+      return max;
+    }
+
+    // Решение 2: Использование Math.max и spread-оператора (современное)
+    function findMaxMath(arr) {
+      return Math.max(...arr);
+    }
+
+    // Решение 3: Использование reduce (функциональный подход)
+    function findMaxReduce(arr) {
+      return arr.reduce((max, current) => (current > max ? current : max), arr[0]);
+    }
+
+    console.log(findMax([1, 5, 2, 9, 3])); // 9</script>
+</body>
+
+</html>
