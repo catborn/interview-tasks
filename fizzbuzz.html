@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FizzBuzz</title>
+</head>
+
+<body>
+  <h1>Задачи к собеседованиям</h1>
+  <h2>Вывести числа от 1 до n</h2>
+  <p>ля чисел, кратных 3, вывести "Fizz", для кратных 5 - "Buzz", а для кратных и 3, и 5 - "FizzBuzz".</p>
+  <script>
+    function fizzBuzz(n) {
+      for (let i = 1; i <= n; i++) {
+        if (i % 15 === 0) { // Можно также (i % 3 === 0 && i % 5 === 0)
+          console.log('FizzBuzz');
+        } else if (i % 3 === 0) {
+          console.log('Fizz');
+        } else if (i % 5 === 0) {
+          console.log('Buzz');
+        } else {
+          console.log(i);
+        }
+      }
+    }
+
+    fizzBuzz(15);
+  </script>
+
+</body>
+
+</html>
