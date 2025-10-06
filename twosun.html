@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two Sun</title>
+</head>
+
+<body>
+  <h1>Задачи к собеседованиям</h1>
+  <h2>Сумма двух чисел</h2>
+  <p>Дан массив чисел и целевое число. Найти индексы двух чисел, которые в сумме дают целевое число. Существует
+    единственное решение</p>
+  <script>
+    // Эффективное решение с использованием объекта (сложность O(n))
+    function twoSum(nums, target) {
+      const numMap = {}; // Создаем объект для хранения чисел и их индексов
+
+      for (let i = 0; i < nums.length; i++) {
+        const complement = target - nums[i]; // Вычисляем, какое число нам нужно
+
+        // Если нужное число уже есть в объекте, возвращаем индексы
+        if (complement in numMap) {
+          return [numMap[complement], i];
+        }
+
+        // Сохраняем текущее число и его индекс в объект
+        numMap[nums[i]] = i;
+      }
+    }
+
+    console.log(twoSum([2, 7, 11, 15], 9)); // [0, 1]
+  </script>
+</body>
+
+</html>
