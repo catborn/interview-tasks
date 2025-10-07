@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Count Vowels</title>
+</head>
+
+<body>
+  <h1>Задачи к собеседованиям</h1>
+  <h2>Подсчет гласных букв в строке</h2>
+  <script>
+    // Решение 1: Через цикл и includes
+    function countVowels(str) {
+      const vowels = 'aeiou';
+      let count = 0;
+      for (let char of str.toLowerCase()) {
+        if (vowels.includes(char)) {
+          count++;
+        }
+      }
+      return count;
+    }
+
+    // Решение 2: Использование регулярных выражений
+    function countVowelsRegex(str) {
+      const matches = str.match(/[aeiou]/gi); // i - ignore case, g - global
+      return matches ? matches.length : 0;
+    }
+
+    console.log(countVowels('Hello World')); // 3
+  </script>
+</body>
+
+</html>
