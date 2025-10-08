@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Closures and setTimeout</title>
+</head>
+
+<body>
+  <h1>Задачи к собеседованиям</h1>
+  <h2>Замыкания и таймеры</h2>
+  <p>Что выведет код? Как исправить, чтобы выводились числа 0, 1, 2, 3, 4?</p>
+  <script>
+    // Исходный проблемный код
+    for (var i = 0; i < 5; i++) {
+      setTimeout(function () {
+        console.log(i);
+      }, 1000);
+    }
+    // Выведет пять раз 5, а не 0,1,2,3,4
+
+    // Решение 1: Использование let (блочная область видимости)
+    for (let i = 0; i < 5; i++) {
+      setTimeout(function () {
+        console.log(i);
+      }, 1000);
+    }
+
+    // Решение 2: Использование IIFE (немедленно вызываемая функция) для создания новой области видимости для каждой итерации
+    for (var i = 0; i < 5; i++) {
+      (function (j) {
+        setTimeout(function () {
+          console.log(j);
+        }, 1000);
+      })(i);
+    }</script>
+</body>
+
+</html>
