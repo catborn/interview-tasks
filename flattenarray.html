@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flatten Array</title>
+</head>
+
+<body>
+  <h1>Задачи к собеседованиям</h1>
+  <h2>Написать функцию, которая преобразует многомерный массив в одномерный</h2>
+  <script>
+    // Решение 1: Использование метода flat (современное, простое)
+    function flattenArraySimple(arr) {
+      return arr.flat(Infinity); // Infinity - глубина раскрытия (любая)
+    }
+
+    // Решение 2: Реализация с помощью рекурсии
+    function flattenArrayRecursive(arr) {
+      let result = [];
+
+      for (let item of arr) {
+        if (Array.isArray(item)) {
+          // Если элемент - массив, рекурсивно вызываем функцию для него
+          result = result.concat(flattenArrayRecursive(item));
+        } else {
+          result.push(item);
+        }
+      }
+
+      return result;
+    }
+
+    // Решение 3: Использование reduce
+    function flattenArrayReduce(arr) {
+      return arr.reduce((flat, toFlatten) => {
+        return flat.concat(Array.isArray(toFlatten) ? flattenArrayReduce(toFlatten) : toFlatten);
+      }, []);
+    }
+
+    console.log(flattenArrayRecursive([1, [2, [3, [4]], 5]])); // [1, 2, 3, 4, 5]
+  </script>
+</body>
+
+</html>
